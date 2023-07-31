@@ -1,0 +1,39 @@
+html {
+    text-align: center;
+    font-family: monospace;
+}
+
+body {
+    background-color: rgb(27, 120, 218)
+}
+
+button {
+    margin: 0.5px;
+    border-radius: 5%;
+    border: none;
+    font-size: 2em;
+    font-family: monospace;
+}
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.calcDisplay {
+    color: white;
+    padding: 10px;
+    text-align:right;
+    background-color: #777c7b;
+}
+
+.container {
+    background-color: black;
+    border: 8px solid rgba(47,47,47,1);
+}
+
+
+#opbtn {
+    background-color: rgb(218, 215, 27);
+}

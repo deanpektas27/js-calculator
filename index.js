@@ -16,21 +16,28 @@ clearButton.onclick = () => clrButton();
 function add(num1, num2) {
     result = num1 + num2;
     calcDisplay.innerText = result;
+    nextOperation();
 }
 
 function subtract(num1, num2) {
     result = num1 - num2;
     calcDisplay.innerText = result;
+    nextOperation();
 }
 
 function multiply(num1, num2) {
     result = num1 * num2;
     calcDisplay.innerText = result;
+    nextOperation();
 }
 
 function divide(num1, num2) {
-    result = num1 / num2;
+    if(num2 == 0) {
+        calcDisplay.innerText = 'ERR';
+    } else {
+        result = num1 / num2;
     calcDisplay.innerText = result;
+    }
 }
 
 ///////////////////////////////
@@ -46,6 +53,12 @@ function operate(operator, num1, num2) {
     } else if(operator === "/") {
         divide(num1, num2);
     }
+}
+
+function nextOperation() {
+    num1 = result;
+    num2 = 0;
+    operator = '';
 }
 
 // Identifies button pressed is a number
