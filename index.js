@@ -1,5 +1,5 @@
 const calcDisplay = document.querySelector('.calcDisplay');
-calcDisplay.innerText = "123456";
+calcDisplay.innerText = "0";
 let displayValue;
 let num1 = 0;
 let num2 = 0;
@@ -37,7 +37,6 @@ function divide(num1, num2) {
 
 // Decide what to do with the given numbers
 function operate(operator, num1, num2) {
-    console.log(`deciding operation!!! I have ${operator}`);
     if(operator == '+') {
         add(num1, num2);
     } else if(operator === "-") {
@@ -62,12 +61,10 @@ function opButton(op) {
     if(op != '=') {
         operator = op;
         num1 = Number(calcDisplay.innerText);
-        console.log(`First number entered is ${num1}`);
         calcDisplay.innerText = 0;
     } else if(op == '=') {
         if(num2 == 0) {
             num2 = Number(calcDisplay.innerText);
-            console.log(`Second number entered is ${num2}`);
             calcDisplay.innerText = 0;
         }
         operate(operator, num1, num2);
@@ -75,7 +72,6 @@ function opButton(op) {
 }
 
 function clrButton() {
-    console.log('Clear!');
     calcDisplay.innerText = 0;
     num1 = 0;
     num2 = 0;
@@ -86,11 +82,9 @@ function clrButton() {
 numberButton.forEach(btn => btn.onclick = () => {
     numButton(btn.textContent);
     displayValue = calcDisplay.innerText;
-    console.log(displayValue);
 });
 
 operatorButton.forEach(btn => btn.onclick = () => {
     opButton(btn.textContent);
     displayValue = calcDisplay.innerText;
-    console.log(displayValue);
 });
