@@ -8,7 +8,8 @@ body {
 }
 
 button {
-    margin: 0.5px;
+    margin: 1px;
+    padding: 20px;
     border-radius: 5%;
     border: none;
     font-size: 2em;
@@ -18,22 +19,33 @@ button {
 .calculator {
     display: flex;
     justify-content: center;
-    align-content: center;
-}
-
-.calcDisplay {
-    color: white;
-    padding: 10px;
-    text-align:right;
-    background-color: #777c7b;
+    align-items: center;
+    min-height: 50vh;
 }
 
 .container {
     background-color: black;
-    border: 8px solid rgba(47,47,47,1);
+    border: 20px solid rgb(50, 29, 100);
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(4, 80px);
+    gap: 2px;
 }
 
+.calcDisplay {
+    grid-column: 1 / -1;
+    color: white;
+    padding: 10px;
+    text-align:right;
+    font-size: 5em;
+    background-color: #777c7b;
+}
 
 #opbtn {
     background-color: rgb(218, 215, 27);
+}
+
+#clrbtn {
+    background-color: rgb(218, 94, 27);
 }
